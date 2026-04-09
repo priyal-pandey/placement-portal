@@ -16,7 +16,7 @@ function StudentProfile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/student/profile/${user.id}`)
+      .get(`https://placement-portal-goj9.onrender.com/api/student/profile/${user.id}`)
       .then((res) => setProfile(res.data))
       .catch(() => alert("Failed to load profile"));
   }, []);
@@ -105,7 +105,7 @@ function StudentProfile() {
 
           {profile.resume && (
             <a
-              href={`http://localhost:5000/uploads/${profile.resume}`}
+              href={`https://placement-portal-goj9.onrender.com/uploads/${profile.resume}`}
               target="_blank"
               rel="noreferrer"
               className="btn w-100 mt-3"

@@ -20,7 +20,7 @@ function Dashboard() {
   // ---------------- FETCH ----------------
   const fetchDrives = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/student/drives");
+      const res = await axios.get("https://placement-portal-goj9.onrender.com/api/student/drives");
       setDrives(Array.isArray(res.data) ? res.data : []);
     } catch {
       setDrives([]);
@@ -30,7 +30,7 @@ function Dashboard() {
   const fetchApplications = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/student/applications/${user.id}`
+        `https://placement-portal-goj9.onrender.com/api/student/applications/${user.id}`
       );
       setApplications(Array.isArray(res.data) ? res.data : []);
     } catch {
@@ -59,7 +59,7 @@ function Dashboard() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/student/apply", formData);
+      await axios.post("https://placement-portal-goj9.onrender.com/api/student/apply", formData);
       alert("Applied successfully");
 
       setSelectedItem(null);
@@ -267,7 +267,7 @@ function Dashboard() {
             Resume:{" "}
             {selectedItem.resume ? (
               <a
-                href={`http://localhost:5000/uploads/${selectedItem.resume}`}
+                href={`https://placement-portal-goj9.onrender.com/uploads/${selectedItem.resume}`}
                 target="_blank"
                 rel="noreferrer"
               >
