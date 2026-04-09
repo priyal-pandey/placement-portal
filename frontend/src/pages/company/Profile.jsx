@@ -15,7 +15,7 @@ function CompanyProfile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/company/profile/${user.id}`)
+      .get(`https://placement-portal-goj9.onrender.com/api/company/profile/${user.id}`)
       .then((res) => setProfile(res.data))
       .catch(() => alert("Failed to load profile"));
   }, []);

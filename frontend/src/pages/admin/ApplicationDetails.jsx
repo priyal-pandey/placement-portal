@@ -15,21 +15,21 @@ function ApplicationDetails() {
   const fetchApplication = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/admin/application/${id}`
+        `https://placement-portal-goj9.onrender.com/api/admin/application/${id}`
       );
       setApplication(res.data);
 
       // optional: fetch related data
       if (res.data.student_id) {
         const s = await axios.get(
-          `http://localhost:5000/api/admin/student/${res.data.student_id}`
+          `https://placement-portal-goj9.onrender.com/api/admin/student/${res.data.student_id}`
         );
         setStudent(s.data);
       }
 
       if (res.data.drive_id) {
         const d = await axios.get(
-          `http://localhost:5000/api/admin/drive/${res.data.drive_id}`
+          `https://placement-portal-goj9.onrender.com/api/admin/drive/${res.data.drive_id}`
         );
         setDrive(d.data);
       }

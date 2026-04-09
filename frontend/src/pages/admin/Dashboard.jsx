@@ -21,30 +21,30 @@ function Dashboard() {
 
   // ---------------- FETCH ----------------
   const fetchCompanies = async () => {
-    const res = await axios.get("http://localhost:5000/api/admin/companies");
+    const res = await axios.get("https://placement-portal-goj9.onrender.com/api/admin/companies");
     setCompanies(res.data);
   };
 
   const fetchStudents = async () => {
-    const res = await axios.get("http://localhost:5000/api/admin/students");
+    const res = await axios.get("https://placement-portal-goj9.onrender.com/api/admin/students");
     setStudents(res.data);
   };
 
   const fetchStats = async () => {
-    const res = await axios.get("http://localhost:5000/api/admin/stats");
+    const res = await axios.get("https://placement-portal-goj9.onrender.com/api/admin/stats");
     setStats(res.data);
   };
 
   const fetchDrives = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/drives");
+      const res = await axios.get("https://placement-portal-goj9.onrender.com/api/admin/drives");
       setDrives(res.data);
     } catch {}
   };
 
   const fetchApplications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/applications");
+      const res = await axios.get("https://placement-portal-goj9.onrender.com/api/admin/applications");
       setApplications(res.data);
     } catch {}
   };
@@ -60,22 +60,22 @@ function Dashboard() {
 
   // ---------------- ACTIONS ----------------
   const approveCompany = async (id) => {
-    await axios.post(`http://localhost:5000/api/admin/approve-company/${id}`);
+    await axios.post(`https://placement-portal-goj9.onrender.com/api/admin/approve-company/${id}`);
     fetchCompanies();
   };
 
   const blacklistCompany = async (id) => {
-    await axios.post(`http://localhost:5000/api/admin/blacklist-company/${id}`);
+    await axios.post(`https://placement-portal-goj9.onrender.com/api/admin/blacklist-company/${id}`);
     fetchCompanies();
   };
 
   const deleteCompany = async (id) => {
-    await axios.delete(`http://localhost:5000/api/admin/delete-company/${id}`);
+    await axios.delete(`https://placement-portal-goj9.onrender.com/api/admin/delete-company/${id}`);
     fetchCompanies();
   };
 
   const blacklistStudent = async (id) => {
-    await axios.post(`http://localhost:5000/api/admin/blacklist-student/${id}`);
+    await axios.post(`https://placement-portal-goj9.onrender.com/api/admin/blacklist-student/${id}`);
     fetchStudents();
   };
 
@@ -217,7 +217,7 @@ function Dashboard() {
                 style={approveBtn}
                 onClick={async () => {
                   await axios.post(
-                    `http://localhost:5000/api/admin/approve-drive/${d.id}`
+                    `https://placement-portal-goj9.onrender.com/api/admin/approve-drive/${d.id}`
                   );
                   fetchDrives();
                 }}
@@ -229,7 +229,7 @@ function Dashboard() {
                 style={dangerBtn}
                 onClick={async () => {
                   await axios.post(
-                    `http://localhost:5000/api/admin/reject-drive/${d.id}`
+                    `https://placement-portal-goj9.onrender.com/api/admin/reject-drive/${d.id}`
                   );
                   fetchDrives();
                 }}
@@ -244,7 +244,7 @@ function Dashboard() {
             style={outlineBtn}
             onClick={async () => {
               const res = await axios.get(
-                `http://localhost:5000/api/admin/drive/${d.id}`
+                `https://placement-portal-goj9.onrender.com/api/admin/drive/${d.id}`
               );
               setSelectedItem({ ...res.data, type: "drive" });
             }}

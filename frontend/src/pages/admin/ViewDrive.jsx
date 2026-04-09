@@ -12,7 +12,7 @@ function ViewDrive() {
 
   const fetchDrive = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/admin/drive/${id}`
+      `https://placement-portal-goj9.onrender.com/api/admin/drive/${id}`
     );
     setDrive(res.data);
   };

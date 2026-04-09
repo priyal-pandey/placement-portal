@@ -1,4 +1,7 @@
+
+
 import { useEffect, useState } from "react";
+
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -8,9 +11,10 @@ function AdminView() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/admin/${type}/${id}`)
+      .get(`https://placement-portal-goj9.onrender.com/api/admin/${type}/${id}`)
       .then((res) => setData(res.data));
   }, [type, id]);
+
 
   if (!data) return <div>Loading...</div>;
 

@@ -51,12 +51,12 @@ function Register() {
         });
 
         res = await axios.post(
-          "http://localhost:5000/api/auth/student-register",
+          "https://placement-portal-goj9.onrender.com/api/auth/student-register",
           formData
         );
       } else {
         res = await axios.post(
-          "http://localhost:5000/api/auth/company-register",
+          "https://placement-portal-goj9.onrender.com/api/auth/company-register",
           form
         );
       }

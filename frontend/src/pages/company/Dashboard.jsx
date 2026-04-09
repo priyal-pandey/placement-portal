@@ -26,14 +26,14 @@ const [filter, setFilter] = useState("All");
   // ---------------- FETCH ----------------
   const fetchDrives = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/company/drives/${user.id}`
+      `https://placement-portal-goj9.onrender.com/api/company/drives/${user.id}`
     );
     setDrives(res.data);
   };
 
   const fetchApplications = async (driveId) => {
     const res = await axios.get(
-      `http://localhost:5000/api/company/applications/${driveId}`
+      `https://placement-portal-goj9.onrender.com/api/company/applications/${driveId}`
     );
     setApplications(res.data);
   };
@@ -47,7 +47,7 @@ const [filter, setFilter] = useState("All");
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/company/create-drive", {
+      await axios.post("https://placement-portal-goj9.onrender.com/api/company/create-drive", {
         company_id: user.id,
         ...form,
       });
@@ -72,7 +72,7 @@ const [filter, setFilter] = useState("All");
 
   const updateStatus = async (appId, status) => {
     await axios.post(
-      `http://localhost:5000/api/company/update-status/${appId}`,
+      `https://placement-portal-goj9.onrender.com/api/company/update-status/${appId}`,
       { status }
     );
     fetchApplications(selectedDrive.id);
@@ -182,7 +182,7 @@ const [filter, setFilter] = useState("All");
     className="btn btn-primary-custom btn-sm"
     onClick={() =>
       window.open(
-        `http://localhost:5000/api/company/export-excel/${d.id}`,
+        `https://placement-portal-goj9.onrender.com/api/company/export-excel/${d.id}`,
         "_blank"
       )
     }
@@ -195,7 +195,7 @@ const [filter, setFilter] = useState("All");
     className="btn btn-outline-custom btn-sm"
     onClick={() =>
       window.open(
-        `http://localhost:5000/api/company/download-resumes/${d.id}`,
+        `https://placement-portal-goj9.onrender.com/api/company/download-resumes/${d.id}`,
         "_blank"
       )
     }
@@ -352,7 +352,7 @@ const [filter, setFilter] = useState("All");
         <strong>Resume:</strong>{" "}
         {selectedApplicant.resume ? (
           <a
-            href={`http://localhost:5000/uploads/${selectedApplicant.resume}`}
+            href={`https://placement-portal-goj9.onrender.com/uploads/${selectedApplicant.resume}`}
             target="_blank"
             rel="noreferrer"
           >
