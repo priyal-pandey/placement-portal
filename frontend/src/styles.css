@@ -1,0 +1,71 @@
+body {
+  background: #f7f3ee;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* CARD */
+.card-custom {
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 6px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-2px);
+}
+
+/* PRIMARY BUTTON */
+.btn-primary-custom {
+  background: #6BCFDC;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary-custom:hover {
+  opacity: 0.9;
+}
+
+/* OUTLINE BUTTON */
+.btn-outline-custom {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* GREEN (SUCCESS) */
+.btn-green {
+  background: #BFDC80;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* PINK (REJECT / ALERT) */
+.btn-pink {
+  background: #F4B9B8;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* YELLOW (PENDING / WARNING) */
+.btn-yellow {
+  background: #F1DA8E;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* LINKS */
+.link-custom {
+  text-decoration: none;
+  color: #1f1f1f;
+  font-weight: 600;
+}
+
+.link-custom:hover {
+  text-decoration: underline;
+}
